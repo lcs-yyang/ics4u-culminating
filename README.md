@@ -27,7 +27,7 @@ chmod +x acp
 
 There are many models for organizing collaborative software development using source control.
 
-To avoid figuratively stepping on each other's toes, you will make use of **branches** and **issues** when writing and commiting code.
+To avoid figuratively stepping on each other's toes, you will make use of **branches** and **issues** when writing and committing code.
 
 ### Using branches
 
