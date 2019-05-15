@@ -49,7 +49,7 @@ git branch issue1
 Then check out that branch:
 
 ```
-git checkout branch1
+git checkout issue1
 ```
 
 You are now ready to start making changes to source code.
