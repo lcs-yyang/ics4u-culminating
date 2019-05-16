@@ -12,7 +12,6 @@ To install the `./acp` shortcut, copy and paste these commands into your Termina
 
 ```
 rm -rf acp
-find . -name '.DS_Store' -type f -delete. 
 echo -e 'acp' >> .gitignore
 echo -e '.DS_Store' >> .gitignore
 echo -e '#!/bin/bash' >> acp
