@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Template for a side-scrolling platform game.
@@ -62,11 +63,26 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        addLeftGround();
-        addFences();
-        addMetalPlateSteps();
-        addClouds();
-        addRightGround();
+        // addLeftGround();
+        // addFences();
+        // addMetalPlateSteps();
+        // addClouds();
+        // addRightGround();
+        
+        
+        // Add a block of GroundBelow objects
+        for (int i = 0; i < 7; i++)
+        {
+            
+            for (int m = 0; m < 7; m++)
+            {
+                int x = HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 27 * HALF_TILE_SIZE + m * TILE_SIZE;
+                Ground anObject = new Ground(x,y);
+                addObject(anObject, x, y);
+            }
+        }
+        
         addHero();
     }
 
