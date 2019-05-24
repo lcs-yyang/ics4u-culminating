@@ -202,7 +202,7 @@ public class SideScrollingWorld extends World
         theHero = new Hero(initialX);
 
         // Add hero in bottom left corner of screen
-        addObject(theHero, initialX, getHeight() / 4 * 3);
+        addObject(theHero, initialX, getHeight() / 100 * 65);
     }
 
     /**
