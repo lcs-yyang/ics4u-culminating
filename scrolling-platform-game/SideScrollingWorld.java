@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Template for a side-scrolling platform game.
@@ -22,7 +23,7 @@ public class SideScrollingWorld extends World
     // TO STUDENTS: Modify only if you're sure
     //              Should be a resolution that's a multiple of TILE_SIZE
     private static final int VISIBLE_WIDTH = 640;
-    private static final int VISIBLE_HEIGHT = 480;
+    private static final int VISIBLE_HEIGHT = 640;
     
     // Additional useful constants based on world size
     public static final int HALF_VISIBLE_WIDTH = VISIBLE_WIDTH / 2;
@@ -62,11 +63,26 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        addLeftGround();
-        addFences();
-        addMetalPlateSteps();
-        addClouds();
-        addRightGround();
+        // addLeftGround();
+        // addFences();
+        // addMetalPlateSteps();
+        // addClouds();
+        // addRightGround();
+        
+        
+        // Add a block of GroundBelow objects
+        for (int i = 0; i < 7; i++)
+        {
+            
+            for (int m = 0; m < 7; m++)
+            {
+                int x = HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 27 * HALF_TILE_SIZE + m * TILE_SIZE;
+                Ground anObject = new Ground(x,y);
+                addObject(anObject, x, y);
+            }
+        }
+        
         addHero();
     }
 
@@ -186,7 +202,7 @@ public class SideScrollingWorld extends World
         theHero = new Hero(initialX);
 
         // Add hero in bottom left corner of screen
-        addObject(theHero, initialX, getHeight() / 4 * 3);
+        addObject(theHero, initialX, getHeight() / 100 * 65);
     }
 
     /**
