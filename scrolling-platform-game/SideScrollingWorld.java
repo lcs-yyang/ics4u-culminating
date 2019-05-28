@@ -316,17 +316,9 @@ public class SideScrollingWorld extends World
         y = VISIBLE_HEIGHT - TILE_SIZE;
         Fence fence4 = new Fence(x, y);
         addObject(fence4, x, y);
+        
 
-        // Two fences on right side of world
-        x = SCROLLABLE_WIDTH - HALF_TILE_SIZE - TILE_SIZE * 3;
-        y = VISIBLE_HEIGHT / 2;
-        Fence fence5 = new Fence(x, y);
-        addObject(fence5, x, y);
-
-        x = SCROLLABLE_WIDTH - HALF_TILE_SIZE - TILE_SIZE * 4;
-        y = VISIBLE_HEIGHT / 2;
-        Fence fence6 = new Fence(x, y);
-        addObject(fence6, x, y);
+   
     }
 
     /**
