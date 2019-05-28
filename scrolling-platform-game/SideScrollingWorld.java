@@ -63,10 +63,10 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        // addLeftGround();
-        // addFences();
+        //addLeftGround();
+        //addFences();
         // addMetalPlateSteps();
-        // addClouds();
+        addClouds();
         // addRightGround();
 
         // Add a block of objects for section 1
@@ -87,6 +87,7 @@ public class SideScrollingWorld extends World
                     GroundBelow anObject = new GroundBelow(x,y);
                     addObject(anObject, x, y);
                 }
+
             }
         }
 
@@ -96,7 +97,7 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 7; m++)
             {
-                int x = 9 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 11 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
@@ -117,10 +118,18 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 7; m++)
             {
-                int x = 18 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 22 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
             }
         }        
 
@@ -130,10 +139,19 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 9; m++)
             {
-                int x = 20 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 24 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 11 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }        
 
@@ -143,10 +161,19 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 11; m++)
             {
-                int x = 22 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 26 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 9 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }        
 
@@ -156,10 +183,19 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 13; m++)
             {
-                int x = 24 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 28 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 7 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }        
 
@@ -169,10 +205,19 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 15; m++)
             {
-                int x = 26 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 30 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }        
 
@@ -182,10 +227,19 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 15; m++)
             {
-                int x = 32 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 38 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }        
         addHero();
