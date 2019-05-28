@@ -259,7 +259,7 @@ public class SideScrollingWorld extends World
             int x = 13 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
             int y = 12 * TILE_SIZE + HALF_TILE_SIZE;
             
-            Spikes anObject = new Spikes(x,y);
+            Spike anObject = new Spike(x,y);
             addObject(anObject, x, y);
         }   
     }    
