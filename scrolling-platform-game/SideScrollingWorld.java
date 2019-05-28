@@ -64,9 +64,10 @@ public class SideScrollingWorld extends World
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
         //addLeftGround();
-        //addFences();
-        // addMetalPlateSteps();
+        addFences();
+        //addMetalPlateSteps();
         addClouds();
+        
         // addRightGround();
 
         // Add a block of objects for section 1
@@ -272,34 +273,41 @@ public class SideScrollingWorld extends World
     /**
      * Add some fences at left and right side.
      */
+   
+    //revised to become fire image
     private void addFences()
     {
         // Three fences on left side of world
-        int x = HALF_TILE_SIZE + TILE_SIZE * 5;
-        int y = VISIBLE_HEIGHT - HALF_TILE_SIZE - TILE_SIZE;
+        int x = HALF_TILE_SIZE + TILE_SIZE * 7;
+        int y = VISIBLE_HEIGHT - TILE_SIZE;
         Fence fence1 = new Fence(x, y);
         addObject(fence1, x, y);
 
-        x = HALF_TILE_SIZE + TILE_SIZE * 6;
-        y = VISIBLE_HEIGHT - HALF_TILE_SIZE - TILE_SIZE;        
+        x = HALF_TILE_SIZE + TILE_SIZE * 8;
+        y = VISIBLE_HEIGHT - TILE_SIZE;        
         Fence fence2 = new Fence(x, y);
         addObject(fence2, x, y);
 
-        x = HALF_TILE_SIZE + TILE_SIZE * 7;
-        y = VISIBLE_HEIGHT - HALF_TILE_SIZE - TILE_SIZE;
+        x = HALF_TILE_SIZE + TILE_SIZE * 9;
+        y = VISIBLE_HEIGHT - TILE_SIZE;
         Fence fence3 = new Fence(x, y);
         addObject(fence3, x, y);
+        
+        x = HALF_TILE_SIZE + TILE_SIZE * 10;
+        y = VISIBLE_HEIGHT - TILE_SIZE;
+        Fence fence4 = new Fence(x, y);
+        addObject(fence4, x, y);
 
         // Two fences on right side of world
         x = SCROLLABLE_WIDTH - HALF_TILE_SIZE - TILE_SIZE * 3;
         y = VISIBLE_HEIGHT / 2;
-        Fence fence4 = new Fence(x, y);
-        addObject(fence4, x, y);
+        Fence fence5 = new Fence(x, y);
+        addObject(fence5, x, y);
 
         x = SCROLLABLE_WIDTH - HALF_TILE_SIZE - TILE_SIZE * 4;
         y = VISIBLE_HEIGHT / 2;
-        Fence fence5 = new Fence(x, y);
-        addObject(fence5, x, y);
+        Fence fence6 = new Fence(x, y);
+        addObject(fence6, x, y);
     }
 
     /**
