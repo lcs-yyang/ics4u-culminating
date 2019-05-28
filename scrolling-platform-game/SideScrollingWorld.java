@@ -64,12 +64,25 @@ public class SideScrollingWorld extends World
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
         //addLeftGround();
+<<<<<<< HEAD
         addFences();
         //addMetalPlateSteps();
         addClouds();
         
+=======
+        //addFences();
+        // addMetalPlateSteps();
+>>>>>>> f395c8691976e7749817eee9075816b7318142f8
         // addRightGround();
+        addClouds();
+        addGround();
+        addHero();
+        addSpikes();
+    }
 
+    // Adding ground to the world
+    private void addGround()
+    {
         // Add a block of objects for section 1
         for (int i = 0; i < 7; i++)
         {
@@ -117,10 +130,10 @@ public class SideScrollingWorld extends World
         for (int i = 0; i < 2; i++)
         {
 
-            for (int m = 0; m < 7; m++)
+            for (int m = 0; m < 3; m++)
             {
                 int x = 22 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-                int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                int y = 15 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
                     Ground anObject = new Ground(x,y);
@@ -138,10 +151,10 @@ public class SideScrollingWorld extends World
         for (int i = 0; i < 2; i++)
         {
 
-            for (int m = 0; m < 9; m++)
+            for (int m = 0; m < 3; m++)
             {
                 int x = 24 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-                int y = 11 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
                     Ground anObject = new Ground(x,y);
@@ -160,10 +173,10 @@ public class SideScrollingWorld extends World
         for (int i = 0; i < 2; i++)
         {
 
-            for (int m = 0; m < 11; m++)
+            for (int m = 0; m < 3; m++)
             {
                 int x = 26 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-                int y = 9 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                int y = 11 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
                     Ground anObject = new Ground(x,y);
@@ -182,10 +195,10 @@ public class SideScrollingWorld extends World
         for (int i = 0; i < 2; i++)
         {
 
-            for (int m = 0; m < 13; m++)
+            for (int m = 0; m < 3; m++)
             {
                 int x = 28 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-                int y = 7 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                int y = 9 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
                     Ground anObject = new Ground(x,y);
@@ -204,10 +217,10 @@ public class SideScrollingWorld extends World
         for (int i = 0; i < 4; i++)
         {
 
-            for (int m = 0; m < 15; m++)
+            for (int m = 0; m < 1; m++)
             {
-                int x = 30 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-                int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                int x = 34 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 7 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
                     Ground anObject = new Ground(x,y);
@@ -228,7 +241,7 @@ public class SideScrollingWorld extends World
 
             for (int m = 0; m < 15; m++)
             {
-                int x = 38 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int x = 42 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
                 if (m == 0)
                 {
@@ -242,33 +255,45 @@ public class SideScrollingWorld extends World
                 }
 
             }
-        }        
-        addHero();
-    }
+        }
+    }    
+    
+    private void addSpikes()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            int x = 13 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+            int y = 12 * TILE_SIZE + HALF_TILE_SIZE;
+            
+            Spikes anObject = new Spikes(x,y);
+            addObject(anObject, x, y);
+        }   
+    }    
 
     /**
      * Add blocks to create the ground to walk on at bottom-left of scrollable world.
-     */
+
     private void addLeftGround()
     {
-        // How many tiles will cover the bottom of the initial visible area of screen?
-        final int tilesToCreate = getWidth() / TILE_SIZE;
+    // How many tiles will cover the bottom of the initial visible area of screen?
+    final int tilesToCreate = getWidth() / TILE_SIZE;
 
-        // Loop to create and add the tile objects
-        for (int i = 0; i < tilesToCreate; i += 1)
-        {
-            // Add ground objects at bottom of screen
-            // NOTE: Actors are added based on their centrepoint, so the math is a bit trickier.
-            int x = i * TILE_SIZE + HALF_TILE_SIZE;
-            int y = getHeight() - HALF_TILE_SIZE;
+    // Loop to create and add the tile objects
+    for (int i = 0; i < tilesToCreate; i += 1)
+    {
+    // Add ground objects at bottom of screen
+    // NOTE: Actors are added based on their centrepoint, so the math is a bit trickier.
+    int x = i * TILE_SIZE + HALF_TILE_SIZE;
+    int y = getHeight() - HALF_TILE_SIZE;
 
-            // Create a ground tile
-            Ground groundTile = new Ground(x, y);
+    // Create a ground tile
+    Ground groundTile = new Ground(x, y);
 
-            // Add the objects
-            addObject(groundTile, x, y);
-        }
+    // Add the objects
+    addObject(groundTile, x, y);
     }
+    }
+     */
 
     /**
      * Add some fences at left and right side.
