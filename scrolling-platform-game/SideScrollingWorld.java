@@ -1,5 +1,5 @@
 
-    import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Template for a side-scrolling platform game.
@@ -24,11 +24,11 @@ public class SideScrollingWorld extends World
     //              Should be a resolution that's a multiple of TILE_SIZE
     private static final int VISIBLE_WIDTH = 640;
     private static final int VISIBLE_HEIGHT = 640;
-    
+
     // Additional useful constants based on world size
     public static final int HALF_VISIBLE_WIDTH = VISIBLE_WIDTH / 2;
     private static final int HALF_VISIBLE_HEIGHT = VISIBLE_HEIGHT / 2;
-    
+
     // Defining the boundaries of the scrollable world
     // TO STUDENTS: Modify SCROLLABLE_WIDTH if you wish to have a longer level
     public static final int SCROLLABLE_WIDTH = VISIBLE_WIDTH * 3;
@@ -63,26 +63,185 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        // addLeftGround();
-        // addFences();
+        //addLeftGround();
+        //addFences();
         // addMetalPlateSteps();
-        // addClouds();
+        addClouds();
         // addRightGround();
-        
-        
-        // Add a block of GroundBelow objects
+
+        // Add a block of objects for section 1
         for (int i = 0; i < 7; i++)
         {
-            
+
             for (int m = 0; m < 7; m++)
             {
                 int x = HALF_TILE_SIZE + i * TILE_SIZE;
                 int y = 27 * HALF_TILE_SIZE + m * TILE_SIZE;
-                Ground anObject = new Ground(x,y);
-                addObject(anObject, x, y);
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
             }
         }
-        
+
+        // Make blocks for section 2
+        for (int i = 0; i < 7; i++)
+        {
+
+            for (int m = 0; m < 7; m++)
+            {
+                int x = 11 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+            }
+        }        
+
+        // Make blocks for section 3
+        for (int i = 0; i < 2; i++)
+        {
+
+            for (int m = 0; m < 7; m++)
+            {
+                int x = 22 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 13 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+            }
+        }        
+
+        // Make blocks for section 4
+        for (int i = 0; i < 2; i++)
+        {
+
+            for (int m = 0; m < 9; m++)
+            {
+                int x = 24 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 11 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
+            }
+        }        
+
+        // Make blocks for section 5
+        for (int i = 0; i < 2; i++)
+        {
+
+            for (int m = 0; m < 11; m++)
+            {
+                int x = 26 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 9 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
+            }
+        }        
+
+        // Make blocks for section 6
+        for (int i = 0; i < 2; i++)
+        {
+
+            for (int m = 0; m < 13; m++)
+            {
+                int x = 28 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 7 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
+            }
+        }        
+
+        // Make blocks for section 7
+        for (int i = 0; i < 4; i++)
+        {
+
+            for (int m = 0; m < 15; m++)
+            {
+                int x = 30 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
+            }
+        }        
+
+        // Make blocks for section 8 （level 1 checkpoint）
+        for (int i = 0; i < 4; i++)
+        {
+
+            for (int m = 0; m < 15; m++)
+            {
+                int x = 38 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+                int y = 5 * TILE_SIZE + HALF_TILE_SIZE + m * TILE_SIZE;
+                if (m == 0)
+                {
+                    Ground anObject = new Ground(x,y);
+                    addObject(anObject, x, y);
+                }
+                else
+                {
+                    GroundBelow anObject = new GroundBelow(x,y);
+                    addObject(anObject, x, y);
+                }
+
+            }
+        }        
         addHero();
     }
 
