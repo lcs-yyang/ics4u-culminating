@@ -64,15 +64,9 @@ public class SideScrollingWorld extends World
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
         //addLeftGround();
-<<<<<<< HEAD
         addFences();
         //addMetalPlateSteps();
         addClouds();
-        
-=======
-        //addFences();
-        // addMetalPlateSteps();
->>>>>>> f395c8691976e7749817eee9075816b7318142f8
         // addRightGround();
         addClouds();
         addGround();
