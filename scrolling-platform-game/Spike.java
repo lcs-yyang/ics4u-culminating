@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Spikes extends Platform
+public class Spike extends Platform
 {
     /**
      * Act - do whatever the Spikes wants to do. This method is called whenever
@@ -17,7 +17,7 @@ public class Spikes extends Platform
      * 
      * Called once when object is created.
      */
-    Spikes(int scrollableWorldX, int scrollableWorldY)
+    Spike(int scrollableWorldX, int scrollableWorldY)
     {
         super(scrollableWorldX, scrollableWorldY);
     }
