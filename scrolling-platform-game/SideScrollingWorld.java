@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SideScrollingWorld extends World
 {
+    GreenfootSound BackgroundMusic = new GreenfootSound("background.mp3");
+
     /**
      * Instance variables
      * 
@@ -449,7 +451,7 @@ public class SideScrollingWorld extends World
             spring anObject = new spring(x,y);
             addObject(anObject, x, y);
         }   
-        
+
         for (int i = 0; i < 1; i++)
         {
             int x = 109 * TILE_SIZE + HALF_TILE_SIZE;
@@ -457,7 +459,7 @@ public class SideScrollingWorld extends World
             spring anObject = new spring(x,y);
             addObject(anObject, x, y);
         }   
-        
+
         for (int i = 0; i < 1; i++)
         {
             int x = 113 * TILE_SIZE + HALF_TILE_SIZE;
@@ -465,7 +467,7 @@ public class SideScrollingWorld extends World
             spring anObject = new spring(x,y);
             addObject(anObject, x, y);
         }   
-        
+
     }
 
     private void addSpikes()
@@ -585,6 +587,7 @@ public class SideScrollingWorld extends World
      */
     public void act()
     {
+        BackgroundMusic.play();  
     }
 
     /**
