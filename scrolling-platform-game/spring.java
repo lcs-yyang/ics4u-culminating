@@ -1,25 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Basic ground object.
+ * Write a description of class spring here.
  * 
- * @author R. Gordon
- * @version May 8, 2019
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class Door extends Platform
+public class spring extends Platform
 {
     /**
      * Constructor
      * 
      * Called once when object is created.
      */
-    Door(int scrollableWorldX, int scrollableWorldY)
+    spring(int scrollableWorldX, int scrollableWorldY)
     {
         super(scrollableWorldX, scrollableWorldY);
     }
     
     /**
-     * Act - do whatever the Ground wants to do. This method is called whenever
+     * Act - do whatever the spring wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

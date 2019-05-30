@@ -131,6 +131,9 @@ public class Hero extends Actor
             {
                 jump();
             }
+        }else if (isTouching (spring.class))
+        {
+            jump();
         }
     }
 
@@ -194,6 +197,25 @@ public class Hero extends Actor
         Actor rearUnder = getOneObjectAtOffset(0 - getImage().getWidth() / 3, getImage().getHeight() / 2, Platform.class);
 
         // If there is no solid object below (or slightly in front of or behind) the hero...
+        if (directlyUnder == null && frontUnder == null && rearUnder == null)
+        {
+            return false;   // Not on a solid object
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    // Is the hero currently touching a solid object? (any subclass of Platform)
+    public boolean belowPlatform()
+    {
+        // Get an reference to a solid object (subclass of Platform) below the hero, if one exists
+        Actor directlyUnder = getOneObjectAtOffset(0, -1 * getImage().getHeight() / 2, Platform.class);
+        Actor frontUnder = getOneObjectAtOffset(getImage().getWidth() / 3, -1 * getImage().getHeight() / 2, Platform.class);
+        Actor rearUnder = getOneObjectAtOffset(0 - getImage().getWidth() / 3, -1 * getImage().getHeight() / 2, Platform.class);
+
+        // If there is no solid object above (or slightly in front of or behind) the hero...
         if (directlyUnder == null && frontUnder == null && rearUnder == null)
         {
             return false;   // Not on a solid object
@@ -279,6 +301,23 @@ public class Hero extends Actor
         // See if direction has changed
         if (deltaY > 0)
         {
+            verticalDirection = JUMPING_DOWN;
+
+            // Set image
+            if (horizontalDirection == FACING_RIGHT)
+            {
+                setImage("hero-jump-down-right.png");
+            }
+            else
+            {
+                setImage("hero-jump-down-left.png");
+            }
+        }
+
+        // See if there is a platform above hero
+        if (deltaY < 0 && belowPlatform())
+        {
+            deltaY = 0;
             verticalDirection = JUMPING_DOWN;
 
             // Set image
@@ -553,6 +592,7 @@ public class Hero extends Actor
         }
 
     }
+
     /**
      * When the hero falls off the bottom of the screen,
      * game is over. We must remove them.
@@ -569,7 +609,7 @@ public class Hero extends Actor
         // or
         // touching a spike?
         if (this.getY() > offScreenVerticalPosition ||
-            isTouching(Spikes.class))
+        isTouching(Spikes.class))
         {
             // Remove the hero
             isGameOver = true;
@@ -579,6 +619,16 @@ public class Hero extends Actor
             // Tell the user game is over
             world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
         }
-  
+        else if (isTouching(Door.class))
+        {
+            // Remove the hero
+            isGameOver = true;
+            world.setGameOver();
+            world.removeObject(this);
+
+            // Tell the user game is over
+            world.showText("LEVEL COMPLETE", world.getWidth() / 2, world.getHeight() / 2);
+        }
+
     }
 }
