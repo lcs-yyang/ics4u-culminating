@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot, MouseInfo and GreenfootSound)
 import java.util.List;
 
 /**
@@ -129,10 +129,12 @@ public class Hero extends Actor
             // Only able to jump when on a solid object
             if (onPlatform())
             {
+                Greenfoot.playSound("Jump Sound Effect.mp3");
                 jump();
             }
         }else if (isTouching (spring.class))
         {
+            Greenfoot.playSound("trampoline.mp3");
             jump();
         }
     }
@@ -289,7 +291,7 @@ public class Hero extends Actor
         // Change the vertical speed to the power of the jump
         deltaY = jumpStrength;
 
-        // Make the character move vertically 
+        // Make the character move vertically
         fall();
     }
 
@@ -615,9 +617,10 @@ public class Hero extends Actor
             isGameOver = true;
             world.setGameOver();
             world.removeObject(this);
-
+            
             // Tell the user game is over
             world.showText("GAME OVER", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.playSound("soccer-monster-hit.mp3");
         }
         else if (isTouching(Door.class))
         {
@@ -628,6 +631,7 @@ public class Hero extends Actor
 
             // Tell the user game is over
             world.showText("LEVEL COMPLETE", world.getWidth() / 2, world.getHeight() / 2);
+            Greenfoot.playSound("win.mp3");
         }
 
     }
