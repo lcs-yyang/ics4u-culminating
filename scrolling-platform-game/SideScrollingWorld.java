@@ -503,8 +503,8 @@ public class SideScrollingWorld extends World
     {
         for (int i = 0; i < 1; i++)
         {
-            int x = 48 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
-            int y = 4 * TILE_SIZE - HALF_TILE_SIZE;
+            int x = 118 * TILE_SIZE + HALF_TILE_SIZE + i * TILE_SIZE;
+            int y = 7 * TILE_SIZE - HALF_TILE_SIZE;
 
             Door anObject = new Door(x,y);
             addObject(anObject, x, y);
